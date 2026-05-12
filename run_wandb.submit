@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH --job-name=wandb_sweep.             # Name your job
+#SBATCH --output=logs/sweep_%A_%a.out       # .out file to capture outputs
+#SBATCH --error=logs/sweep_%A_%a.err.       # .err files to capture error
+#SBATCH --partition=normal                          
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1                 # Run compute on the same node
+#SBATCH --cpus-per-task=16                  # Match n_jobs=-1 in train.py
+#SBATCH --mem=32G                           # Memory floor
+#SBATCH --time=02:00:00                     # Run time in HH:MM:SS
+#SBATCH --mail-type=BEGIN,END,FAIL          # Email on job start, completion, and failure
+#SBATCH --mail-user=sunet@stanford.edu      # On Stanford systems, use your sunet
+
+# Create log directory
+mkdir -p logs
+
+# Replace with the sweep ID that you saved
+SWEEP_ID="username/my-sweep-name/sweepID"
+CONTAINER="wandb.sif"
+
+# Redirect W&B local logs to /tmp to avoid error
+export WANDB_DIR=/tmp
+
+# Run the W&B agent inside the container
+apptainer exec $CONTAINER \
+    wandb agent $SWEEP_ID

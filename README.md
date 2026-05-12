@@ -7,19 +7,6 @@ In this tutorial, you'll learn:
 * How to track these runs using the W&B dashboard and Slurm commands
 
 
-Setting up a W&B sweep on an HPC cluster
-
-Authenticating W&B inside an Apptainer container
-Defining a hyperparameter search space in sweep.yaml
-Launching parallel sweep agents with Slurm job arrays
-
-
-Monitoring and retrieving results
-
-Tracking runs in the W&B dashboard
-Retrieving the best configuration via the W&B API
-
-
 ## Today's Tutorial Agenda
 
 * Authenticating Weights & Biases on Sherlock or Farmshare [[link](running-wandb-on-hpc.md#step-1-authenticating-your-weights--biases-account-from-sherlock-or-farmshare)]

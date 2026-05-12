@@ -18,7 +18,7 @@ Now that you have an API key, we can use it to authenticate W&B on Sherlock usin
 
 To use W&B, we'll be using the python package `wandb`, and we'll access this using a Python container like Brian showed us yesterday. We'll start by downloading the container from the MATRICS bootcamp GitHub with the following command.
 ```bash
-singularity pull oras://ghcr.io/matrics-bootcamp/wandb:latest
+apptainer pull oras://ghcr.io/matrics-bootcamp/wandb:latest
 ```
 
 We'll start by activating a shell inside our container.
@@ -27,12 +27,12 @@ We'll start by activating a shell inside our container.
 apptainer shell wandb.sif
 ```
 
-You can tell that you're working from inside the container, because instead of showing:
+You can tell that you're working from inside the container, because instead of showing the login node:
 ```bash
-[sunet@nodename <span style="color:red">login</span> ~]$
+[sunet@nodename "login" ~]$
 ```
 
-The command line shows:
+The command line shows the container environment:
 ```bash
 (wandbenv)
 ```

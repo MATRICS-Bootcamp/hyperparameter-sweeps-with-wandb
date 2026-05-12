@@ -16,6 +16,11 @@ In order to sync whatever system we're working from to your Weights & Biases acc
 
 Now that you have an API key, we can use it to authenticate W&B on Sherlock using our handy W&B container. You'll only need to do this once because W&B will save your API key to a `~/.netrc` file in your Sherlock $HOME directory.
 
+To use W&B, we'll be using the python package `wandb`, and we'll access this using a Python container like Brian showed us yesterday. We'll start by downloading the container from the MATRICS bootcamp GitHub with the following command.
+```bash
+singularity pull oras://ghcr.io/matrics-bootcamp/wandb:latest
+```
+
 We'll start by activating a shell inside our container.
 
 ```bash
